@@ -7,6 +7,11 @@ spec:
     - name: source
   steps:
     - name: remove
+      image: alpine:3.14
+      script: |
+        #!/bin/sh
+        rm -rf $(workspaces.source.path)/*
+
       # ... rest of cleanup spec ...
 ---
 apiVersion: tekton.dev/v1beta1
